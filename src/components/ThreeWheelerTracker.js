@@ -116,9 +116,9 @@ const ThreeWheelerTracker = () => {
       const response = await fetch(
         `${API_BASE}/nearby?lon=${lon}&lat=${lat}&radiusKm=${radiusKm}`
       );
-      
+
       if (!response.ok) throw new Error('Failed to fetch nearby vehicles');
-      
+
       const data = await response.json();
       setNearbyVehicles(data);
       updateVehicleMarkers(data);
